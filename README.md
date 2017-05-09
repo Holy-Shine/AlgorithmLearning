@@ -1,2 +1,3 @@
 # AlgorithmLearning
-some fundamental algorithms
+include:  
+- sort algorithm
