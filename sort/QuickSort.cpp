@@ -25,7 +25,7 @@ void initData(vector<int>& array){
 		array.push_back(random(100));
 }
 //key part 
-Iter getPartition(vector<int>& array,Iter begin,Iter end){
+Iter getPartition(Iter begin,Iter end){
 	Iter lowPos = begin;   //lowPos:position to put the endData(referance)
 	for(Iter it = begin;it<=end-1;++it){
 		if(*it < *end){
@@ -41,11 +41,11 @@ Iter getPartition(vector<int>& array,Iter begin,Iter end){
 	return lowPos;
 }
 //QuickSort
-void QuickSort(vector<int>& array,Iter begin,Iter end){
+void QuickSort(Iter begin,Iter end){
 	if(begin<end){
-		Iter mid = getPartition(array,begin,end);
-		QuickSort(array,begin,mid-1);
-		QuickSort(array,mid+1,end);
+		Iter mid = getPartition(begin,end);
+		QuickSort(begin,mid-1);
+		QuickSort(mid+1,end);
 	}
 }
 //print array
@@ -58,7 +58,7 @@ int main(){
 	initData(array);
 	cout<<"before sort:"<<endl;
 	print(array);
-	QuickSort(array,array.begin(),array.end()-1);
+	QuickSort(array.begin(),array.end()-1);
 	cout<<"after sort:"<<endl;
 	print(array);
 }

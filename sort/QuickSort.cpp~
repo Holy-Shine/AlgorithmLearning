@@ -26,7 +26,7 @@ void initData(vector<int>& array){
 }
 //key part 
 Iter getPartition(vector<int>& array,Iter begin,Iter end){
-	Iter lowPos = begin;
+	Iter lowPos = begin;   //lowPos:position to put the endData(referance)
 	for(Iter it = begin;it<=end-1;++it){
 		if(*it < *end){
 			int temp = *lowPos;
